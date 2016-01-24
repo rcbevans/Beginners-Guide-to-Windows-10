@@ -1,17 +1,19 @@
 ﻿<Page
-    x:Class="Stupendous_Styles_Challenge.MainPage"
+    x:Class="Stupendous_Styles_Challenge.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Stupendous_Styles_Challenge"
+    xmlns:local="using:Stupendous_Styles_Challenge.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
 
     <!-- Region Page Resources -->
     <Page.Resources>
         <Style TargetType="Button" x:Key="NavButtonStyle">
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="100"/>
             <Setter Property="Background" Value="Black"/>
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="BorderThickness" Value="1,0,1,0"/>
@@ -47,7 +49,8 @@
             </Grid.ColumnDefinitions>
 
             <!-- Region Donuts -->
-            <Button Grid.Column="0" Style="{StaticResource NavButtonStyle}">
+            <Button Grid.Column="0" Style="{StaticResource NavButtonStyle}"
+                    Click="DonutButtonClick">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Assets/Icons/donut-icon.png" Style="{StaticResource NavButtonImageStyle}"/>
                     <TextBlock Text="Donuts" Style="{StaticResource NavButtonTextStyle}"/>
@@ -55,7 +58,8 @@
             </Button>
             <!-- EndRegion -->
             <!-- Region Coffee -->
-            <Button Grid.Column="1" Style="{StaticResource NavButtonStyle}">
+            <Button Grid.Column="1" Style="{StaticResource NavButtonStyle}"
+                    Click="CoffeeButtonClick">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Assets/Icons/coffee-icon.png" Style="{StaticResource NavButtonImageStyle}"/>
                     <TextBlock Text="Coffee" Style="{StaticResource NavButtonTextStyle}"/>
@@ -63,7 +67,8 @@
             </Button>
             <!-- EndRegion -->
             <!-- Region Schedule -->
-            <Button Grid.Column="2" Style="{StaticResource NavButtonStyle}">
+            <Button Grid.Column="2" Style="{StaticResource NavButtonStyle}"
+                    Click="ScheduleButtonClick">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Assets/Icons/schedule-icon.png" Style="{StaticResource NavButtonImageStyle}"/>
                     <TextBlock Text="Schedule" Style="{StaticResource NavButtonTextStyle}"/>
@@ -71,7 +76,8 @@
             </Button>
             <!-- EndRegion -->
             <!-- Region Complete -->
-            <Button Grid.Column="3" Style="{StaticResource NavButtonStyle}">
+            <Button Grid.Column="3" Style="{StaticResource NavButtonStyle}"
+                    Click="CompleteButtonClick">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Assets/Icons/complete-icon.png" Style="{StaticResource NavButtonImageStyle}"/>
                     <TextBlock Text="Complete" Style="{StaticResource NavButtonTextStyle}"/>
@@ -95,7 +101,7 @@
             </Grid.RowDefinitions>
 
             <Frame Name="ContentFrame"/>
-            <Image Grid.Column="1" Source="Assets/Backgrounds/background.jpg" Stretch="UniformToFill"/>
+            <Image Grid.Column="1" Source="ms-appx:/Assets/Backgrounds/background.jpg" Stretch="UniformToFill"/>
 
         </Grid>
         

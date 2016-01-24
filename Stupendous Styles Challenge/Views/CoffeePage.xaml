@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="Stupendous_Styles_Challenge.Views.CoffeePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Stupendous_Styles_Challenge.Views"
+    xmlns:vm="using:Stupendous_Styles_Challenge.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:CoffeePageViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="CoffeePageButtonStyle">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid Background="#3C1F19"
+          Style="{StaticResource DefaultPageStyle}">
+        <StackPanel
+            Orientation="Vertical">
+            <Image Style="{StaticResource WhiteLogoStyle}"/>
+
+            <Grid Margin="{StaticResource DefaultItemMargin}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="1"
+                    Content="Roast"
+                    Style="{StaticResource CoffeePageButtonStyle}">
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="None" 
+                                            Command="{x:Bind VM.CoffeeRoastCommand}"
+                                            CommandParameter="None"/>
+                            <MenuFlyoutItem Text="Medium" 
+                                            Command="{x:Bind VM.CoffeeRoastCommand}"
+                                            CommandParameter="Medium"/>
+                            <MenuFlyoutItem Text="Dark"
+                                            Command="{x:Bind VM.CoffeeRoastCommand}"
+                                            CommandParameter="Dark"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+
+                <Button
+                    Grid.Column="2"
+                    Content="Sweetener"
+                    Style="{StaticResource CoffeePageButtonStyle}">
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="None" 
+                                            Command="{x:Bind VM.CoffeeSweetenerCommand}"
+                                            CommandParameter="None"/>
+                            <MenuFlyoutItem Text="Sugar" 
+                                            Command="{x:Bind VM.CoffeeSweetenerCommand}"
+                                            CommandParameter="Sugar"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+
+                <Button
+                    Grid.Column="3"
+                    Content="Cream"
+                    Style="{StaticResource CoffeePageButtonStyle}">
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="None" 
+                                            Command="{x:Bind VM.CoffeeCreamCommand}" 
+                                            CommandParameter="None"/>
+                            <MenuFlyoutItem Text="2% Milk" 
+                                            Command="{x:Bind VM.CoffeeCreamCommand}" 
+                                            CommandParameter="2% Milk"/>
+                            <MenuFlyoutItem Text="Whole Milk"
+                                            Command="{x:Bind VM.CoffeeCreamCommand}"
+                                            CommandParameter="Whole Milk"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </Grid>
+
+            <StackPanel
+                Orientation="Horizontal">
+
+                <TextBlock
+                    Style="{StaticResource PageTextStyle}"
+                    Text="Coffee:"/>
+                <TextBlock
+                    Style="{StaticResource PageTextStyle}"
+                    Text="{x:Bind VM.CoffeeResultString, Mode=OneWay}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

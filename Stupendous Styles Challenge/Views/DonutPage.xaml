@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="Stupendous_Styles_Challenge.Views.DonutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Stupendous_Styles_Challenge.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Slider" x:Key="DonutPageSliderStyle">
+            <Setter Property="Minimum" Value="0"/>
+            <Setter Property="Maximum" Value="24"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="Red"
+          Style="{StaticResource DefaultPageStyle}">
+        <StackPanel
+            Orientation="Vertical">
+            
+            <Image Style="{StaticResource WhiteLogoStyle}"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Style="{StaticResource PageTextStyle}"
+                           Text="Original Glazed Count:"/>
+                <Slider
+                    Grid.Column="1"
+                    Style="{StaticResource DonutPageSliderStyle}"/>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Style="{StaticResource PageTextStyle}"
+                           Text="Speedway Special Count:"/>
+                <Slider
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Style="{StaticResource DonutPageSliderStyle}"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

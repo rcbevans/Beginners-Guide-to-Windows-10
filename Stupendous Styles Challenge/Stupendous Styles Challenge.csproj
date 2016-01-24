@@ -96,19 +96,22 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="ViewModels\CoffeePageViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CoffeePage.xaml.cs">
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="Views\CoffeePage.xaml.cs">
       <DependentUpon>CoffeePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CompletePage.xaml.cs">
+    <Compile Include="Views\CompletePage.xaml.cs">
       <DependentUpon>CompletePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DonutPage.xaml.cs">
+    <Compile Include="Views\DonutPage.xaml.cs">
       <DependentUpon>DonutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SchedulePage.xaml.cs">
+    <Compile Include="Views\SchedulePage.xaml.cs">
       <DependentUpon>SchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,7 +129,7 @@
     <Content Include="Assets\Icons\complete-icon.png" />
     <Content Include="Assets\Icons\donut-icon.png" />
     <Content Include="Assets\Icons\schedule-icon.png" />
-    <Content Include="Assets\Icons\white-logo.png" />
+    <Content Include="Assets\Logo\white-logo.png" />
     <Content Include="Assets\Logo\color-logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -142,27 +145,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="Styles\AppPageStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\CoffeePage.xaml">
+    <Page Include="Views\CoffeePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CompletePage.xaml">
+    <Page Include="Views\CompletePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DonutPage.xaml">
+    <Page Include="Views\DonutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SchedulePage.xaml">
+    <Page Include="Views\SchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
