@@ -7,7 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Style="{StaticResource DefaultPageStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Image
+            Style="{StaticResource WhiteLogoStyle}"
+            Source="ms-appx:/Assets/Logo/color-logo.png"/>
+
+        <Image
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Grid.Row="1"
+            Stretch="Uniform"
+            Source="ms-appx:/Assets/Backgrounds/ticket.jpg"/>
+
+        <StackPanel
+            Orientation="Vertical"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Grid.Row="1">
+            <TextBlock
+                FontSize="54"
+                Text="Order"/>
+
+            <TextBlock
+                FontSize="96"
+                Text=" 96"/>
+
+        </StackPanel>
     </Grid>
 </Page>

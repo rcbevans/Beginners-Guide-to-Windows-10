@@ -7,7 +7,39 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Green"
+          Style="{StaticResource DefaultPageStyle}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Style="{StaticResource WhiteLogoStyle}"
+               Grid.ColumnSpan="2"/>
+
+        <TextBlock
+            Grid.Column="0"
+            Grid.Row="1"
+            Style="{StaticResource PageTextStyle}"
+            Text="Pickup:"/>
+
+        <CalendarDatePicker
+            Grid.Column="1"
+            Grid.Row="1"
+            Foreground="White"/>
+
+        <TimePicker
+            Grid.Column="1"
+            Grid.Row="2"
+            Foreground="White"
+            />
 
     </Grid>
 </Page>
