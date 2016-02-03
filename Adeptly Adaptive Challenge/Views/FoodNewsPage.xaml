@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="Adeptly_Adaptive_Challenge.Views.FoodNewsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Adeptly_Adaptive_Challenge.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Adeptly_Adaptive_Challenge.ViewModels"
+    xmlns:uc="using:Adeptly_Adaptive_Challenge.UserControls.Views"
+    xmlns:designTime="using:Adeptly_Adaptive_Challenge.DesignTime.ViewModels"
+    mc:Ignorable="d">
+
+    <d:Page.DataContext>
+        <vm:FoodNewsPageViewModel/>
+    </d:Page.DataContext>
+
+    <Page.DataContext>
+        <vm:FoodNewsPageViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <DataTemplate x:Key="NewsItemView">
+            <uc:NewsItemView/>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <GridView
+            Background="DarkGray"
+            ItemTemplate="{StaticResource NewsItemView}"
+            ItemsSource="{Binding NewsStories}"/>
+    </Grid>
+</Page>

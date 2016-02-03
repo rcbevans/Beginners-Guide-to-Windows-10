@@ -19,6 +19,6 @@ namespace Stupendous_Styles_Challenge.ViewModels
                 field = value;
                 OnPropertyChanged(propertyName);
                 return true;
-            }
         }
+    }
 }
